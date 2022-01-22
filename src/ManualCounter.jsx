@@ -3,10 +3,10 @@ import React, { useState, useRef, useEffect } from "react";
 function ManualCounter() {
     const [count, setCount] = useState(0);
     const intervalId = useRef(null);
-    let tmp = 0;
-    console.log(`tmp before change: ${tmp}`);
-    tmp = tmp + 10;
-    console.log(`tmp after change: ${tmp}`);
+    const tmp = useRef(0);
+    console.log(`tmp.current: ${tmp.current}`);
+    tmp.current = tmp.current + 10;
+    console.log(`tmp.current: ${tmp.current}`);
     console.log("intervalId.current: ", intervalId.current);
     console.log(`랜더링... count: ${count}`);
 
